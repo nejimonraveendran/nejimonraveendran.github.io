@@ -31,6 +31,12 @@ this.draw = () => {
   this.text(brand, x * 1.5, y * 1.5);  
 
 
+  textSize(20);
+  stroke(255);
+  text(windowWidth, 40, 20);
+  text(windowHeight, 40, 40);
+  
+  
   //draw outer circles.
   this.noFill();
   this.strokeWeight(dia * 0.02);
