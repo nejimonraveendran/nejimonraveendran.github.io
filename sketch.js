@@ -1,4 +1,5 @@
 this.setup = () => {
+  this.pixelDensity(1);
   this.frameRate(1);
   this.createCanvas(windowWidth, windowHeight);
   this.colorMode(HSB);
@@ -29,12 +30,6 @@ this.draw = () => {
   this.textSize(dia / 5)
   this.stroke(40, 0.25);
   this.text(brand, x * 1.5, y * 1.5);  
-
-
-  textSize(20);
-  stroke(255);
-  text(windowWidth, 40, 20);
-  text(windowHeight, 40, 40);
   
   
   //draw outer circles.
