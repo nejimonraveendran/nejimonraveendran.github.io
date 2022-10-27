@@ -1,217 +1,162 @@
-let sunAlpha;
-let sunAuraIncrement;
-let skyDrawn = false;
-let foregroundBuildingsDrawn = false;
-let midGroundBuildingsDrawn = false;
-let farAwayBuildingsDrawn = false;
-let horizonDrawn = false;
-let cloudX = 0, cloudY = 0;
-
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-
-  refreshDrawing();
-  frameRate(50);
+this.setup = () => {
+  this.frameRate(1);
+  this.createCanvas(windowWidth, windowHeight);
+  this.colorMode(HSB);
 }
 
-
-function draw() {
-  drawSky();
-  drawHorizon();
-  drawSun();
-  drawFarAwayBuildings();
-  drawMidGroundBuildings();
-  drawForegroundBuildings();
-  //drawClouds();
-}
-
-function refreshDrawing(){
-  skyDrawn = false;
-  foregroundBuildingsDrawn = false;
-  midGroundBuildingsDrawn = false;
-  farAwayBuildingsDrawn = false;
-  horizonDrawn = false;
-
-  sunAlpha = 1;
-  sunAuraIncrement = 0;
-}
-
-function drawSky(){
-  if(skyDrawn) return;
-
-  for (let pos = 0; pos <= width; pos++) {
-    //convert the current position to a value between 0 and 1
-    let amount = ((pos / width) * 100) / 100;
+this.draw = () => {
+  this.background(10);
+  this.colorMode(HSB);
+  this.angleMode(DEGREES);
   
-    //set color mode to HSB.  H = hue (0 to 330), S = saturation (0 to 100), B = brightness (0 to 100)
-    //https://www.learnui.design/blog/the-hsb-color-system-practicioners-primer.html
-    colorMode(HSB);
+  let x = this.canvas.width / 2;
+  let y = this.canvas.height / 2;
 
-    //set color HSB mode
-    let h = lerp (210, 180, amount); // try changing the values
-    let s = lerp (50, 0, amount);;
-    let b = 100;
-    stroke(h, s, 100);
-    line(0, pos, width, pos);
-  }
-
-  skyDrawn = true;
-}
-
-let farAwayBuildingX = 0;
-
-let farAwayBuildingSpacing = 5;
-let farAwayBuildingMaxHeight = 100;
-
-function drawFarAwayBuildings(){
-  if(farAwayBuildingsDrawn) return;
-
-  colorMode(HSB);
-  //fill(200, 100, 80);
-  fill('rgba(250, 250, 250, 0.5)');
-  noStroke();
+  let diaPercent = 0.95;
+  let dia = this.canvas.width < this.canvas.height ? this.canvas.width * diaPercent : this.canvas.height * diaPercent;
   
-  //let x = 0;
-  for (let index = 0; index < width; index = index + 100) {
-    let y = random(200, 400);
-    let w = random(20, 60);
-    let x = random (index + 100, index + 120);
-    rect(x, height - y, w, 400);  
+  //draw background
+  let brand = "NEJIMON";
+  this.noFill();
+  this.strokeWeight(1);
+  this.stroke(40, 0.5);
+  this.textAlign(CENTER, CENTER);
+  this.textSize(dia / 2)
+  this.text(brand, this.canvas.width / 2, this.canvas.height / 2);
+  this.textSize(dia / 5)
+  this.stroke(40, 0.25);
+  this.text(brand, x / 3, y / 2);  
+  this.textSize(dia / 5)
+  this.stroke(40, 0.25);
+  this.text(brand, x * 1.5, y * 1.5);  
+
+
+  //draw outer circles.
+  this.noFill();
+  this.strokeWeight(dia * 0.02);
+  this.stroke(30, 50, 50);
+  this.circle(x, y, dia);
+  this.strokeWeight(dia * 0.002);
+  this.stroke(0, 0, 0);
+  fill(230, 50, 50);
+  this.circle(x, y, dia);
+  fill(200);
+  this.circle(x, y, dia * 0.9);
+  this.circle(x, y, dia * 0.8);
+
+
+  //draw minute digits
+  let minDigit = 0;
+  for (let deg = 0; deg < 360; deg+=3) {
     
-  }
-   
-  farAwayBuildingsDrawn = true;
-}
-
-function drawHorizon(){
-  if(horizonDrawn) return;
-  colorMode(HSB);
-  fill('rgba(250, 250, 250, 0.3)');
-  noStroke();
-  
-  ellipse(width/4, height / 1.1, windowWidth / 3);
-  ellipse(width, height / 1.1, windowWidth / 1.5);
-    
-  horizonDrawn = true;
-}
-
-function drawClouds(){
-  colorMode(HSB);
-  fill('rgba(250, 250, 250, 0.3)');
-  noStroke();
-  
-  ellipse(cloudX, cloudY, 100);
-  cloudX++;  
-}
-
-
-function drawForegroundBuildings(){
-  if(foregroundBuildingsDrawn) return;
-
-  let x = 0;
-  colorMode(HSB);
-  fill(200, 50, 50);
-  noStroke();
-  
-  for (let index = 0; index < 100; index++) {
-    let y = random(30, 200);
-    let w = random(50, 100);
-    let h = height - y;
-    rect(x, h, w, 400);
-    
-    let a = random(1, index);
-    if(a > 0 && a < 10)
-      strokeWeight(5);
-      rect(x + random(5, w), h - 20, 1, 20);
-      ellipse(x + w / 2, h, a, random(0, w));
-    
-    x = x + index;      
-  }
-
-  foregroundBuildingsDrawn = true;
-}
-
-function drawMidGroundBuildings(){
-  if(midGroundBuildingsDrawn) return;
-
-  let x = 0;
-  colorMode(HSB);
-  noStroke();
-  
-  for (let index = 0; index < 100; index++) {
-    let y = random(40, 300);
-    let w = random(50, 100);
-    fill(200, 50, 80);
-  
-    rect(x, height - y, w, 400);
-
-  //  fill(60, 50, 100);
-
-    // let units = w / 10;
-    // let unitGap = 5;
-
-    // for (let nextUnitX = x + unitGap; nextUnitX <= (x + w) - unitGap; nextUnitX = nextUnitX + units + unitGap) {
+    if(deg % 6 == 3){
+      let degree = 270 + deg;
+      let r = (dia * 0.9) / 2;
+      let markingX = (cos(degree) * r) + x;
+      let markingY = (sin(degree) * r) + y;
+      this.line(x, y, markingX, markingY);
+    } else if (deg % 6 == 0){
+      let degree = 270 + deg;
+      let digitR = dia / 2.35;
+      let digitX = (cos(degree) * digitR ) + x;
+      let digitY = (sin(degree) * digitR) + y;
+      textAlign(CENTER, CENTER);
       
-    //   rect(nextUnitX, (height - y) + unitGap, units);
-    //   //nextUnitX = nextUnitX + units + 2;
-    //   //rect(nextUnitX, (height - y) + 1, units);
+      if(deg % 30 == 0){
+        fill(360, 100, 100);
+        textSize(dia * 0.03)
+      } else{
+        fill(0);
+        textSize(dia * 0.02)
+      }
         
-    // }
-
-        
-    x = x + 100;      
-  }
-
-   midGroundBuildingsDrawn  = true;
-}
-
-
-
-// function drawBuildings(color, brightness, clustered, maxHeight){
-//   let x = 0;
-//   colorMode(HSB);
-//   fill(color, 50, brightness);
-//   noStroke();
-  
-//   for (let index = 0; index < 100; index++) {
-//     let y = random(30, maxHeight);
-//     let w = random(50, 100);
-//     rect(x, height - y, w, 400);
-
-//     if(clustered){
-//       x = x + index;
-//     }else{
-//       x = x + 100;
-//     }
-      
-//   }
-// }
-
-
-
-function drawSun() {
-  colorMode(HSB);
-  fill(27, 100, 100);
-  
-  let sunWidth = 100;
-  ellipse(width / 4, height / 2, sunWidth);
-  
-  noFill();
-    
-    if(sunAlpha >= 0.02){
-      sunAlpha = sunAlpha - 0.02;
-      stroke('rgba(245,237,196,' + sunAlpha  + ')');
-      ellipse(width / 4, height / 2, sunWidth + sunAuraIncrement);  
-      sunAuraIncrement++;
+      text(minDigit, digitX, digitY);
+      minDigit++;
     }
+  }
 
-}
-
-function mouseMoved(){
+  //draw clock face gradient.
+  let cirDia = dia * 0.8;
+  for (let i = 0; i < cirDia; i++) {
+    let amount = map(i, 0, cirDia, 0, 1);
+    let clr = lerp(1, 250, amount);  
+    stroke(clr, 50, 80, 0.6);
+    noFill();
+    this.circle(x, y, i);
+  }
   
+  //draw internal white circles on the clock face
+  stroke(255);
+  this.circle(x, y, dia * 0.5);
+  this.circle(x, y, dia * 0.51);
+
+  //draw brand on the clock face
+  let brandX = (cos(90) * dia * 0.1) + x;
+  let brandY = (sin(90) * dia * 0.1) + y;
+  textAlign(CENTER, CENTER);
+  textSize(dia * 0.09)
+  text(brand, brandX, brandY);
+  
+
+  //draw large hour digits on the clock face
+  let hourDigit = 1;
+  for (let deg = 300; deg < 660; deg+=30) {
+    let r = (dia * 0.7) / 2;
+    let circleDia = r * 0.25;
+    let digitX = (cos(deg) * r) + x;
+    let digitY = (sin(deg) * r) + y;
+
+    this.fill(deg - 300, 100, 50);
+    noStroke(50);
+    this.circle(digitX, digitY, circleDia);
+    
+    fill(255);
+    stroke(10);
+    textAlign(CENTER, CENTER);
+    textSize(circleDia * 0.7)
+    text(hourDigit, digitX, digitY);
+
+    hourDigit++;
+  }
+
+
+  //draw hour hand
+  let hr = hour();
+  let hrAngle = 270 + hr * 30;
+  let hrLen = dia / 4;
+  let hrX = (cos(hrAngle) * hrLen) + x;
+  let hrY = (sin(hrAngle) * hrLen) + y ;
+  this.strokeWeight(dia * 0.02);
+  this.stroke(360, 100, 90);
+  this.line(x, y, hrX, hrY);
+  this.circle(x, y, dia * 0.029);
+
+  //draw minute hand
+  let min = minute();
+  let minAngle = 270 + min * 6;
+  let minLen = dia / 3;
+  let minX = (cos(minAngle) * minLen) + x;
+  let minY = (sin(minAngle) * minLen) + y ;
+  this.strokeWeight(dia * 0.02);
+  this.stroke(250, 100, 90);
+  this.line(x, y, minX, minY);
+  this.circle(x, y, dia * 0.021);
+
+  //draw second hand
+  let sec = second();
+  let secAngle = 270 + sec * 6;
+  let secLen = dia / 2.4;
+  let secX = (cos(secAngle) * secLen) + x;
+  let secY = (sin(secAngle) * secLen) + y ;
+  this.strokeWeight(dia * 0.005);
+  this.stroke(100, 60, 50);
+  this.line(x, y, secX, secY);
+  this.circle(x, y, dia * 0.021);
+
 }
 
-function mouseClicked(){
-  refreshDrawing();
+
+//window resized event
+this.windowResized = () =>{
+  this.resizeCanvas(windowWidth, windowHeight);
 }
