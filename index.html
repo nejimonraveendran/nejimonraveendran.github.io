@@ -1,18 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Nejimon Raveendran</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins", sans-serif}
 
-    <title>Sketch</title>
+      .title
+      {
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+      }
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+      .subtitle 
+      {
+        text-align: center;
+        color: rgb(57, 64, 67)
+      }
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-    <script src="sketch.js"></script> 
+      .location
+      {
+        text-align: center;
+        
+      }
+
+      hr{
+        border-color: rgb(159, 167, 173);
+      }
+
+      .menulink
+      {
+        color: aliceblue;
+      }
+
+      .social_media
+      {
+
+      }
+
+      .menubar
+      {
+        height:30px; 
+        background: rgb(57, 64, 67); 
+        text-align: center;
+        
+      }
+
+      .gender
+      {
+        margin: 10px;
+      }
+
+      .project_title
+      {
+        font-weight: 400;
+      }
+
+      .tags{
+        color:rgb(69, 98, 193);
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="w3-light-grey">
+
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+    
+      <!-- Left Column -->
+      <div class="w3-third">  
+        <div class="w3-white w3-text-grey w3-card-4">
+            
+          <div class="w3-display-container">
+            <div class="w3-display-container">
+              <div class="w3-display-bottomleft gender">He/His/Him</div>
+              <!-- <div style="z-index: 1000;" class="w3-display-middle">
+                <img src="me1.jpg" style="width:100%;" alt="Avatar" >  
+              </div> -->
+              <img src="me-profile.jpg" style="width:100%;" alt="Avatar" >  
+            </div>
+            
+            <div class="menubar">
+                <span><a class="menulink w3-hover-opacity" href="/">Tech</a></span>
+                |
+                <span><a class="menulink w3-hover-opacity" href="/">Art</a></span>
+            </div>
+
+            <div class="w3-display-center w3-container w3-text-black">
+              <h2 class="title">Nejimon Raveendran</h2>
+              <h4 class="subtitle">Software Architect</h4>
+              <p class="location">
+                <i class="fas fa-map-marker-alt w3-text-blue"></i>
+                Toronto, Canada
+              </p>
+            </div>
+          </div>
+
+          <div class="w3-container">
+            <p>
+              <i class="fab fa-linkedin fa-fw w3-margin-right w3-large w3-text-blue w3-hover-opacity"></i>
+              <a class="social_media w3-text-grey w3-hover-opacity" href="https://ca.linkedin.com/in/nejimon-raveendran-togaf%C2%AE-581a6789">linkedin/nejimon.raveendran</a>
+            </p>
+            <p>
+              <i class="fas fa-globe fa-fw w3-margin-right w3-large w3-text-blue w3-hover-opacity"></i>
+              <a class="social_media w3-text-grey w3-hover-opacity" href="https://nejimonraveendran.github.io">nejimonraveendran.github.io</a>
+            </p>
+
+            <p>
+              <i class="fab fa-medium fa-fw w3-margin-right w3-large w3-text-blue w3-hover-opacity"></i>
+              <a class="social_media w3-text-grey w3-hover-opacity" href="https://www.medium.com/@nejimon.raveendran">medium/nejimon.raveendran</a>
+            </p>
+            
+            <p>
+              <i class="fas fa-certificate fa-fw w3-margin-right w3-large w3-text-blue w3-hover-opacity"></i>
+              <a class="social_media w3-text-grey w3-hover-opacity" href="https://togaf9-cert.opengroup.org/certification-listing/4">togaf/nejimon.raveendran</a>
+            </p>
+            
+            <hr/>
+
+            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-blue"></i>Skills</b></p>
+            <ul>
+              <li>Software Architecture (Microsoft Tech)</li>
+              <li>Microsoft Azure Cloud</li>
+            </ul>  
+            <br>
+          </div>
+        </div><br>
+
+      <!-- End Left Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-twothird">
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-user fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Who I am</h2>
+          <div class="w3-container w3-justify">
+            <p>I am a Microsoft- and Open Group TOGAF-certified successful and highly motivated IT professional with 17+ years of experience in building customized software solutions in multiple agile development environments.</p>
+          </div>
+        </div>
+
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-desktop w3-margin-right w3-xxlarge w3-text-blue"></i>Programming</h2>
+          <div class="w3-container">
+            <p>
+              <i class="fas fa-code fa-fw w3-large w3-text-blue w3-hover-opacity"></i>
+              <b><a class="social_media w3-text-grey w3-hover-opacity w3-large" href="/">Code Projects</a></b>
+              <br>
+              A collection of software projects in various technologies.
+              <br>
+              <i class="tags">Azure, .NET, ASP.NET, Desktop, DevOps, etc.</i>
+            </p> 
+            <hr>
+
+            <p>
+              <i class="fas fa-robot fa-fw w3-large w3-text-blue w3-hover-opacity"></i>
+              <b><a class="social_media w3-text-grey w3-hover-opacity w3-large" href="/">Robotics and IoT</a></b>
+              <br>
+              A collection of projects in the area of microcontrollers and LEGO Robotics.
+              <br>
+              <i class="tags">Arduino, ESP8266, LEGO Mindstorms, etc.</i>
+            </p> 
+            <hr>
+
+            <p>
+              <i class="fas fa-robot fa-fw w3-large w3-text-blue w3-hover-opacity"></i>
+              <b><a class="social_media w3-text-grey w3-hover-opacity w3-large" href="/">Generative Art</a></b>
+              <br>
+              A collection of generative art projects using JavaScript.
+              <br>
+              <i class="tags">P5Js, JavaScript, etc.</i>
+            </p> 
+            <hr>
+          </div>
+        </div>
+        
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-paint-brush w3-margin-right w3-xxlarge w3-text-blue"></i>Hobbies</h2>
+          <div class="w3-container">
+            <p>
+              <i class="fas fa-images fa-fw w3-large w3-text-blue w3-hover-opacity"></i>
+              <b><a class="social_media w3-text-grey w3-hover-opacity w3-large" href="/">Art Works</a></b>
+              <br>
+              A collection of my paintings, both real media and digital.
+              <br>
+              <i class="tags">Watercolor, Oil paint, digital, etc.</i>
+            </p> 
+            <hr>
+          </div>
+        </div>
+
+        <!-- <div class="w3-container w3-card w3-white">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-desktop w3-margin-right w3-xxlarge w3-text-blue"></i>Tech Projects</h2>
+          <div class="w3-container">
+            <p>
+              <i class="fab fa-github fa-fw w3-large w3-text-blue w3-hover-opacity"></i>
+              <b><a class="social_media w3-text-grey w3-hover-opacity w3-large" href="https://github.com/nejimonraveendran/WindowShot">WindowShot</a></b>
+              <br>
+              A .NET application that does Windows Desktop time-lapse screen recording.
+              <br>
+              <i class="tags">.NET, Desktop</i>
+            </p> 
+            <hr>
+            <p>
+              <i class="fab fa-github fa-fw w3-large w3-text-blue w3-hover-opacity"></i>
+              <b><a class="social_media w3-text-grey w3-hover-opacity w3-large" href="https://github.com/nejimonraveendran/WindowShot">WindowShot</a></b>
+              <br>
+              A .NET application that does Windows Desktop time-lapse screen recording.
+            </p> 
+            <hr>
+          </div>
+        </div> -->
+
+      <!-- End Right Column -->
+      </div>
+      
+    <!-- End Grid -->
+    </div>
+    
+    <!-- End Page Container -->
+  </div>
+
+  <!-- <footer class="w3-container w3-dark-grey w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+    <i class="fab fa-facebook-square w3-hover-opacity"></i>
+    <i class="far fa-facebook-official "></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </footer> -->
+
   </body>
 </html>
