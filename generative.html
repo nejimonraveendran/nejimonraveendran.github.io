@@ -165,8 +165,7 @@
     $(function(){
       $('.thumb').click(function (){
           var url = this.src.replace('thumbnails', 'sketches').replace('.gif', '') + '/index.html';
-          console.log(url);
-          window.open(url);          
+          location.href = url;          
 
       });      
 
