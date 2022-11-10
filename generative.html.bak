@@ -149,7 +149,7 @@
           <i class="fab fa-github w3-text-blue"></i>
           <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/p5js/tree/main/falling_hearts">Source Code</a>
           <br>
-          Falling Hearts animation using JavaScript (p5.js). Uses <a href="https://mathworld.wolfram.com/HeartCurve.html">Wolfram Alpha Heart Curve formula</a>.          
+          Falling Hearts animation using JavaScript (p5.js). Uses <a href="https://github.com/nejimonraveendran/p5js/tree/main/falling_hearts">Wolfram Alpha Heart Curve formula</a>.          
           <br>
           <hr>
         </p> 
