@@ -103,15 +103,26 @@
         cursor: pointer;
       }
 
+      .footer{
+        position:fixed; 
+        bottom:0; 
+        left:0; 
+        width:100%;
+      }
     </style>
   </head>
 
   <body class="w3-grey">
     <div class="header">
+      <a href="/"><i class="fas fa-home back"></i></a>
       <span><i class="fa fa-arrow-left back" onclick="window.history.go(-1);"></i></span>
       <span class="title">Nejimon </span>
-      <span class="subtitle">| Generative Art</span>
+      <span class="subtitle">| Generative Art </span>
+      <span>
+        <img src="https://api.visitorbadge.io/api/visitors?path=nejimon.raveendran.genart.dev&countColor=%234a748a&style=flat"></img>
+      </span>
     </div>
+
 
 
     <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -158,6 +169,10 @@
 
       </div>
     </div>    
+
+    <footer class="w3-container w3-dark-grey w3-center footer">
+      <p>&copy Nejimon Raveendran | <a href="/privacy.html">Privacy Policy</a></p>
+    </footer>
   </body>
 
 

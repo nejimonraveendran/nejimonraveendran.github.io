@@ -1,19 +1,33 @@
 let balloonsArray = [];
 let canvasHeight = 220; 
-    
+let timerHandle;
+let timerInterval = 3000;
+
+let timerFunc = function () {
+    drawNewBalloons();         
+}
+
 function setup(){
     pixelDensity(1);
     let cnv = this.createCanvas(windowWidth, canvasHeight);
     cnv.position(0, 0);
     colorMode(HSB);
     
-    drawNewBalloons();
+    clearInterval(timerHandle); 
+    drawNewBalloons(); 
+    timerHandle = setInterval(timerFunc, timerInterval);
 
-    setInterval(() => 
-    {
-        drawNewBalloons();
 
-    }, 3000);
+    addEventListener('focus', (event) => { 
+        clearInterval(timerHandle); 
+        drawNewBalloons(); 
+        timerHandle = setInterval(timerFunc, timerInterval);
+
+    });
+    
+    addEventListener('blur', (event) => { 
+        clearInterval(timerHandle); 
+    });
 }
   
 function draw(){

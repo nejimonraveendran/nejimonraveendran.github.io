@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nejimon Raveendran</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <style>
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins", sans-serif}
+
+      .header
+      {
+        position: relative;
+        background: rgb(36, 40, 42);
+        height: 100px;
+        padding: 30px;
+        box-shadow: 0px 1px 5px black 
+      }
+
+    
+      .title
+      {
+        color: white;
+        text-transform: uppercase;
+        font-size: x-large;
+        font-weight: 600;
+
+      }
+
+      .subtitle
+      {
+        color: cornflowerblue;
+        text-transform: uppercase;
+
+      }
+
+      .back{
+        margin-right: 20px;
+        color: rgb(216, 202, 202);
+        cursor: pointer;
+      }
+
+      .contents
+      {
+        display:grid;
+        position: relative;
+        background-color: rgb(242, 244, 246);
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 10px;
+      }
+
+      .footer{
+        position:fixed; 
+        bottom:0; 
+        left:0; 
+        width:100%;
+      }
+
+    </style>
+  </head>
+
+  <body class="w3-grey">
+    <div class="header">
+      <a href="/"><i class="fas fa-home back"></i></a>
+      <span><i class="fa fa-arrow-left back" onclick="window.history.go(-1);"></i></span>
+      <span class="title">Nejimon </span>
+      <span class="subtitle">| Privacy Policy</span>
+    </div>
+
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+      <div class="w3-center">
+        <div class="w3-container">
+          <div class="contents">
+            <p>
+              This site does not use any custom cookies. The only tracking used is an anonymous site visit counter, which does not invidually identify the visitor in any manner.   
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="w3-container w3-dark-grey w3-center w3-margin-top footer">
+      <p>&copy Nejimon Raveendran | <a href="/privacy.html">Privacy Policy</a></p>
+    </footer>
+  </body>
+
+
+  <script>
+    $(function(){
+      $('.thumb').click(function (){
+          var url = this.src.replace('thumbnails', 'paintings');
+          var canvas = $('#canvas');
+          $(canvas).css('display', 'block');
+          $('#photo').attr('src', url);
+          $('#photo').css('margin', 'auto');
+          
+      });      
+
+      $('#canvas').click(function (){
+        var canvas = $('#canvas');
+          $(canvas).css('display', 'none');
+      });
+    });
+  </script>
+</html>
