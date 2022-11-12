@@ -1,7 +1,7 @@
 let fishes = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight-80);
   pixelDensity(1);
   addNewFish();
 }
@@ -32,7 +32,7 @@ function draw() {
 }
 
 function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight-80);
 }
 
 

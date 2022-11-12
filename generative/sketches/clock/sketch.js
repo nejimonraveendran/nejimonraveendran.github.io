@@ -1,10 +1,8 @@
 this.setup = () => {
   this.pixelDensity(1);
   this.frameRate(1);
-  this.createCanvas(windowWidth, windowHeight);
+  this.createCanvas(windowWidth, windowHeight-80);
   this.colorMode(HSB);
-
-  createLoop({duration:5, gif:true});
 }
 
 this.draw = () => {
@@ -167,5 +165,5 @@ this.draw = () => {
 
 //window resized event
 this.windowResized = () =>{
-  this.resizeCanvas(windowWidth, windowHeight);
+  this.resizeCanvas(windowWidth, windowHeight-80);
 }

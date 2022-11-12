@@ -2,7 +2,7 @@ let heartRadius = 10;
 let shapes = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight-80);
   pixelDensity(1);
 }
 
@@ -32,7 +32,7 @@ function draw() {
 }
 
 function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight-80);
 }
 
 function mousePressed(){
