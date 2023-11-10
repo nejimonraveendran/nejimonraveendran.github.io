@@ -15,3 +15,20 @@ input{
     position: absolute;
     width: 100%;
 }
+
+#clickAnywhere{
+    color: rgba(255, 255, 255, 0.5); 
+    position: absolute; 
+    left: 10px; 
+    top: 10px;
+    text-align: left;
+    font: 20px Helvetica;
+}
+
+#watermark{
+    color: rgba(255, 255, 255, 0.1); 
+    position: absolute; 
+    left: 15%; 
+    top: 20%;
+    font: 5vw Helvetica;
+}
