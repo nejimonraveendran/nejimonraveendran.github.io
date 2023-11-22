@@ -13,7 +13,7 @@ var MainLayer = /** @class */ (function () {
         this._context = this._canvas.getContext('2d', { willReadFrequently: true });
         this.context = this._context;
         this.height = this._canvasHeight;
-        this.loadImageAndProcess("cat.png");
+        this.loadImageAndProcess("tree.jpg");
         //on this event, , 
         this._canvas.onmousemove = function (e) {
             if (e.buttons != 1) //if left button down
