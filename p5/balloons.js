@@ -1,5 +1,5 @@
 let balloonsArray = [];
-let canvasHeight = 220; 
+let canvasHeight = window.innerHeight / 2; // 220; 
 let timerHandle;
 let timerInterval = 3000;
 
@@ -11,11 +11,12 @@ function setup(){
     pixelDensity(1);
     let cnv = this.createCanvas(windowWidth, canvasHeight);
     cnv.position(0, 0);
+    
     colorMode(HSB);
     
     clearInterval(timerHandle); 
     drawNewBalloons(); 
-    timerHandle = setInterval(timerFunc, timerInterval);
+   // timerHandle = setInterval(timerFunc, timerInterval);
 
 
     addEventListener('focus', (event) => { 
@@ -29,8 +30,9 @@ function setup(){
         clearInterval(timerHandle); 
     });
 }
-  
+
 function draw(){
+  
     clear();
 
     for (let i = 0; i < balloonsArray.length; i++) {
@@ -61,13 +63,13 @@ function windowResized(){
 function drawNewBalloons(){
     let balloonSize = random(5, 10);
   
-    for (let i = 0; i <= width; i = i + balloonSize * 2) {
-      balloonSize = random(5, 10);
+    for (let i = 0; i <= width; i = i + balloonSize * 10) {
+      balloonSize = random(1, 2);
       let balloonColor = random(0, 300);
       let x = i + random (-2, 2);
       let y = 0 - balloonSize; // height + random(balloonSize, balloonSize + 10);
       let balloon = new Balloon(x, y, balloonSize, balloonColor);
-      balloon.speed = random(0, 0.7);
+      balloon.speed = random(2, 10);
       balloonsArray.push(balloon);
     }
 }
