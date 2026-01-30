@@ -1,295 +1,178 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Nejimon Raveendran</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="w3.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nejimon Raveendran</title>
+    <link rel="stylesheet" href="site.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body class="projects-page">
+    <header>
+        <nav class="container">
+            <div class="nav-brand">Nejimon Raveendran</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/articles.html">Articles</a></li>
+                <li><a href="/genart.html">GenArt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <style>
-      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins", sans-serif}
+    <main class="main-layout">
+        <!-- Main Content -->
+        <section class="content">
+            <!-- Technology Section -->
+            <section id="technology" class="technology">
+                <div class="section-header">
+                    <h3><i class="fas fa-desktop"></i>&nbsp; Personal Projects </h3>
+                </div>
 
-      .header
-      {
-        position: relative;
-        background: rgb(36, 40, 42);
-        height: 80px;
-        padding: 20px;
-        box-shadow: 0px 1px 5px black 
-      }
+                <article class="tech-category">
+                    <a href="https://github.com/nejimonraveendran/NPlay-Music"  target="_blank">
+                        <img class="project-logo" src="/images/nplay.jpg"/>
+                    </a>
+                    <p>
+                        <strong>NPlay</strong> - NPlay is a remote-controllable lightweight Hi-Fi music player and streamer designed for Linux platforms.
+                    </p>
+                    <p class="tech-tags">.NET10, ASP.NET, C#, Raspberry Pi, C++</p>
+                    <strong>
+                        <i class="fab fa-github w3-text-blue"></i> 
+                        <a href="https://github.com/nejimonraveendran/NPlay-Music"  target="_blank">Go to project</a>
+                    </strong>
+                </article>
 
-      .contents
-      {
-        display:grid;
-        position: relative;
-        background-color: rgb(176, 181, 186);
-        justify-content: center;
-        align-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 10px;
-      }
-      
-      .card 
-      {
-        padding: 10px;
-        width: fit-content;
-        height:fit-content;
-        background-color: white;
-        box-shadow: 1px 1px 5px gray 
-      }
+                <article class="tech-category">
+                    <a href="https://github.com/nejimonraveendran/AzureIoT"  target="_blank">
+                        <img class="project-logo" src="/images/smart-switch.jpg"/>
+                    </a>
+                    <p>
+                        <strong>Cloud-based Smart Switch</strong> - A project demonstrating practical example of building a smart switch using technologies such as Azure IoT Hub, ASP.NET Core, Azure App Service, and ESP32 microcontroller.
+                    </p>
+                    <p class="tech-tags">Azure, .NET, IoT, ESP32, Microcontroller</p>
+                    <strong>
+                        <i class="fab fa-github w3-text-blue"></i> 
+                        <a href="https://github.com/nejimonraveendran/AzureIoT"  target="_blank">Go to project</a>
+                    </strong>
+                </article>
+                
+                <article class="tech-category">
+                    <a href="https://github.com/nejimonraveendran/AzureWebAppBicep"  target="_blank">
+                        <img class="project-logo" src="/images/bicep.jpg"/>
+                    </a>
+                    <p>
+                        <strong>Azure IaC</strong> - An practical example showing how to use Bicep template, an alternative to Azure ARM templates, to do infrastructure as code and application deployments to Azure App Service Web App.
+                    </p>
+                    <p class="tech-tags">Azure, .NET, IaC</p>
+                    <strong>
+                        <i class="fab fa-github w3-text-blue"></i> 
+                        <a href="https://github.com/nejimonraveendran/AzureWebAppBicep"  target="_blank">Go to project</a>
+                    </strong>
+                </article>
 
-      .thumb_frame
-      {
-        background: black;
-        max-height: 200px;
-        max-width: 200px;
-        align-items: center;
-        text-align: center;
-        vertical-align:middle;
-      }
+                <article class="tech-category">
+                    <a href="https://github.com/nejimonraveendran/ChocoBar"  target="_blank">
+                        <img class="project-logo" src="/images/chocobar.jpg"/>
+                    </a>
+                    <p>
+                        <strong>ChocoBar</strong> - ChocoBar is a Windows desktop toolbar with capabilities to add hot keys and screen recording. People like digital artists can add to the tool the frequently used hot keys in their favorite applications for quick access to those functionalities.
+                    </p>
+                    <p class="tech-tags">.NET Framework, C#, WinForms</p>
+                    <strong>
+                        <i class="fab fa-github w3-text-blue"></i> 
+                        <a href="https://github.com/nejimonraveendran/ChocoBar"  target="_blank">Go to project</a>
+                    </strong>
+                </article>
+                
+                <article class="tech-category">
+                    <a href="https://github.com/nejimonraveendran/WindowShot"  target="_blank">
+                        <img class="project-logo" src="/images/windowshot.jpg"/>
+                    </a>
+                    <p>
+                        <strong>WindowShot</strong> - A .NET Winforms Desktop application project to do timelapse-recording of Windows Desktop screen.
+                    </p>
+                    <p class="tech-tags">.NET Framework, C#, WinForms</p>
+                    <strong>
+                        <i class="fab fa-github w3-text-blue"></i> 
+                        <a href="https://github.com/nejimonraveendran/WindowShot"  target="_blank">Go to project</a>
+                    </strong>
+                </article>
 
-      .title
-      {
-        color: white;
-        text-transform: uppercase;
-        font-size: x-large;
-        font-weight: 600;
+                <article class="tech-category">
+                    <a href="https://github.com/nejimonraveendran/DockerDotNet"  target="_blank">
+                        <img class="project-logo" src="/images/docker.jpg"/>
+                    </a>
+                    <p>
+                        <strong>Docker .NET</strong> - A collection of artifacts (guides, Dockerfile boilerplate templates, demo code, etc) that can be readily used when containerizing .NET applications using Docker.
+                    </p>
+                    <p class="tech-tags">Docker, .NET</p>
+                    <strong>
+                        <i class="fab fa-github w3-text-blue"></i> 
+                        <a href="https://github.com/nejimonraveendran/DockerDotNet"  target="_blank">Go to project</a>
+                    </strong>
+                </article>
 
-      }
+                <div>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=nejimon.raveendran.projects&countColor=%234a748a&style=flat"></img>
+                </div>
+            </section>
+        </section>
+    </main>
 
-      .subtitle
-      {
-        color: cornflowerblue;
-        text-transform: uppercase;
-
-      }
-
-      .thumb
-      {
-        cursor: pointer;
-      }
-
-      #canvas
-      {
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1000;
-        width: 100%;
-        height: 100%;
-        margin: auto;
-        padding: 20px;
-      }
-
-      #photo
-      {
-        position:relative; 
-        max-width: 100%; 
-        max-height: 100%;
-        display: grid;
-        margin: auto;
-        box-shadow: 0px 0px 100px black; 
-      }
-
-      .back{
-        margin-right: 20px;
-        color: rgb(216, 202, 202);
-        cursor: pointer;
-      }
-
-      .footer{
-        position:fixed; 
-        bottom:0; 
-        left:0; 
-        width:100%;
-        height: 50px;
-      }
-    </style>
-  </head>
-
-  <body class="w3-grey">
-    <div class="header">
-      <a href="/"><i class="fas fa-home back w3-hover-opacity"></i></a>
-      <!-- <span><i class="fa fa-arrow-left back w3-hover-opacity" onclick="window.history.go(-1);"></i></span> -->
-      <span class="title">Nejimon </span>
-      <span class="subtitle">| PROJECTS AND ARTICLES </span>
-      <span>
-        <img src="https://api.visitorbadge.io/api/visitors?path=nejimon.raveendran.genart&countColor=%234a748a&style=flat"></img>
-      </span>
-    </div>
-
-
-
-    <div class="w3-container w3-card w3-white w3-margin-bottom">
-      <div class="w3-container" style="padding-bottom: 50px;">
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Build A Smart Switch Using Azure IoT Hub, Espressif ESP32, and ASP.NET Core</span>
-          </b>
-          <br>
-          A project demonstrating practical example of building a smart switch using technologies such as Azure IoT Hub, ASP.NET Core, Azure App Service, and ESP32 microcontroller.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/AzureIoT">Project Link</a>
-          <hr>
-        </p> 
-
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">ChocoBar - A Windows Desktop Toolbar</span>
-          </b>
-          <br>
-          ChocoBar is a project I built for my own use and now have open sourced it. It is a Windows desktop toolbar with capabilities to add hot keys and screen recording. People like digital artists can add to the tool the frequently used hot keys in their favorite applications for quick access to those functionalities.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/ChocoBar">Project Link</a>
-          <hr>
-        </p> 
-        
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Docker .NET Samples</span>
-          </b>
-          <br>
-          A collection of artifacts (guides, Dockerfile boilerplate templates, demo code, etc) that can be readily used when containerizing .NET applications using Docker.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/DockerDotNet">Repo Link</a>
-          <hr>
-        </p> 
-
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Embedded Programs Collection</span>
-          </b>
-          <br>
-          A collection of C++ sketches demonstrating projects using various microcontrollers, i.e., ESP8266, ESP32, Arduino, etc.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/EmbeddedSystems">Repo Link</a>
-          <hr>
-        </p> 
-
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Automate Deployment of Azure Web Apps using Azure CLI and PowerShell</span>
-          </b>
-          <br>
-          An article showing how to use Azure CLI to do application deployments to Azure App Service Web App.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://medium.com/@nejimon.raveendran/automate-deployment-of-azure-web-apps-using-azure-cli-and-powershell-adbcaa06e236">Article Link</a>
-          <hr>
-        </p>         
-        
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Automate Deployment of Azure Web App Using Bicep Template</span>
-          </b>
-          <br>
-          An practical example showing how to use Bicep template, an alternative to Azure ARM templates, to do application deployments to Azure App Service Web App.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/AzureWebAppBicep">Repo Link</a>
-          <hr>
-        </p>         
-    
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">WindowShot</span>
-          </b>
-          <br>
-          A .NET Winforms Desktop application project to do timelapse-recording of Windows Desktop screen.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/WindowShot">Repo Link</a>
-          <hr>
-        </p>         
-
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Entity Framework Core Migration Demo</span>
-          </b>
-          <br>
-          This repository demonstrates how DB schema migrations can be done in Entity Framework Core Migrations.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/EntityFrameworkCoreMigrationDemo">Repo Link</a>
-          <hr>
-        </p>                 
-
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Nuances of .NET Core Dependency Injection</span>
-          </b>
-          <br>
-          This repo demonstrates different behaviors when using different lifetime scopes, i.e., AddScoped versus AddTransient versus AddSingleton.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/DotNetCoreDiDemo">Repo Link</a>
-          <hr>
-        </p>                 
-
-        <!-- new project -->
-        <p>        
-          <i class="fas fa-image w3-text-blue" ></i>
-          <b>
-            <span class="social_media w3-text-grey w3-large">Self-Hosted AI/ML Server with CodeProject.AI</span>
-          </b>
-          <br>
-          AI and ML are fast becoming the essential tools in every developer's arsenal.  This is an article about CodeProject.AI, a self-hosted AI server.          
-          <br>
-          <i class="fab fa-github w3-text-blue"></i>
-          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://www.linkedin.com/pulse/self-hosted-aiml-server-codeprojectai-nejimon-raveendran-togaf-/">Article Link</a>
-          <hr>
-        </p>                 
-
-      </div>
-    </div>    
-
-    <footer class="w3-container w3-dark-grey w3-center footer">
-      <p>&copy Nejimon Raveendran | <a href="/privacy.html">Privacy Policy</a></p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nejimon Raveendran. All rights reserved.</p>
+        </div>
     </footer>
-  </body>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
-  <script>
-    $(function(){
-      $('.thumb').click(function (){
-          var url = this.src.replace('thumbnails', 'sketches').replace('.gif', '') + '/index.html';
-          location.href = url;          
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
 
-      });      
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
 
-      $('#canvas').click(function (){
-        var canvas = $('#canvas');
-          $(canvas).css('display', 'none');
-      });
-    });
-  </script>
+        // Keep sidebar height in sync with main content on desktop
+        function syncSidebarHeight() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            if (!sidebar || !content) return;
+            // Disable on small screens (stacked layout)
+            if (window.innerWidth <= 768) {
+                sidebar.style.minHeight = '';
+                return;
+            }
+            const contentHeight = Math.max(content.getBoundingClientRect().height, document.documentElement.clientHeight - 120);
+            sidebar.style.minHeight = contentHeight + 'px';
+        }
+
+        let _syncSidebarTimer;
+        window.addEventListener('load', syncSidebarHeight);
+        window.addEventListener('resize', () => {
+            clearTimeout(_syncSidebarTimer);
+            _syncSidebarTimer = setTimeout(syncSidebarHeight, 150);
+        });
+
+        // Re-sync after images inside content load
+        document.querySelectorAll('.content img').forEach(img => {
+            if (!img.complete) img.addEventListener('load', syncSidebarHeight);
+        });
+    </script>
+</body>
 </html>

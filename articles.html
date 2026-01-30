@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nejimon Raveendran</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="projects-page">
+    <header>
+        <nav class="container">
+            <div class="nav-brand">Nejimon Raveendran</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/articles.html">Articles</a></li>
+                <li><a href="/genart.html">GenArt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-layout">
+        <!-- Main Content -->
+        <section class="content">
+            <!-- Technology Section -->
+            <section id="technology" class="technology">
+                <div class="section-header">
+                    <h3><i class="fas fa-pen fa-fw"></i>&nbsp; Tech Articles </h3>
+                </div>
+
+                <!-- Article -->
+                <article class="tech-category">
+                    <a href="https://medium.com/@nejimon.raveendran/automate-deployment-of-azure-web-apps-using-azure-cli-and-powershell-adbcaa06e236"  target="_blank">
+                        <img class="project-logo" src="/images/azure-cli.jpg"/>
+                    </a>
+                    <p>
+                        <strong>Automate Deployment of Azure Web Apps using Azure CLI and PowerShell</strong>
+                    </p>
+                    <p class="tech-tags">
+                        An article showing how to use Azure CLI to do application deployments to Azure App Service Web App.
+                    </p>
+                    <strong>
+                        <i class="fas fa-book"></i> 
+                        <a href="https://medium.com/@nejimon.raveendran/automate-deployment-of-azure-web-apps-using-azure-cli-and-powershell-adbcaa06e236"  target="_blank">Read the article</a>
+                    </strong>
+                </article>
+
+                <!-- Article -->
+                <article class="tech-category">
+                    <a href="https://medium.com/@nejimon.raveendran/empowering-your-apps-with-local-ai-integration-and-insights-ff1f39153f86"  target="_blank">
+                        <img class="project-logo" src="/images/ollama-run.jpg"/>
+                    </a>
+                    <p>
+                        <strong>Empowering Your Apps with Local AI: Integration and Insights</strong>
+                    </p>
+                    <p class="tech-tags">
+                        This article looks at how to set up Ollama AI server locally and use it for LLM-based tasks and integration with applications.
+                    </p>
+                    <strong>
+                        <i class="fas fa-book"></i> 
+                        <a href="https://medium.com/@nejimon.raveendran/empowering-your-apps-with-local-ai-integration-and-insights-ff1f39153f86"  target="_blank">Read the article</a>
+                    </strong>
+                </article>
+
+
+                <!-- Article -->
+                <article class="tech-category">
+                    <a href="https://www.linkedin.com/pulse/self-hosted-aiml-server-codeprojectai-nejimon-raveendran-togaf-/"  target="_blank">
+                        <img class="project-logo" src="/images/codeproject.jpg"/>
+                    </a>
+                    <p>
+                        <strong>Self-Hosted AI/ML Server with CodeProject.AI</strong>
+                    </p>
+                    <p class="tech-tags">
+                        AI and ML have become essential tools in every developer's arsenal. This is an article about CodeProject.AI, a self-hosted AI server.
+                    </p>
+                    <strong>
+                        <i class="fas fa-book"></i> 
+                        <a href="https://www.linkedin.com/pulse/self-hosted-aiml-server-codeprojectai-nejimon-raveendran-togaf-/"  target="_blank">Read the article</a>
+                    </strong>
+                </article>
+
+                <div>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=nejimon.raveendran.articles&countColor=%234a748a&style=flat"></img>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nejimon Raveendran. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Keep sidebar height in sync with main content on desktop
+        function syncSidebarHeight() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            if (!sidebar || !content) return;
+            // Disable on small screens (stacked layout)
+            if (window.innerWidth <= 768) {
+                sidebar.style.minHeight = '';
+                return;
+            }
+            const contentHeight = Math.max(content.getBoundingClientRect().height, document.documentElement.clientHeight - 120);
+            sidebar.style.minHeight = contentHeight + 'px';
+        }
+
+        let _syncSidebarTimer;
+        window.addEventListener('load', syncSidebarHeight);
+        window.addEventListener('resize', () => {
+            clearTimeout(_syncSidebarTimer);
+            _syncSidebarTimer = setTimeout(syncSidebarHeight, 150);
+        });
+
+        // Re-sync after images inside content load
+        document.querySelectorAll('.content img').forEach(img => {
+            if (!img.complete) img.addEventListener('load', syncSidebarHeight);
+        });
+    </script>
+</body>
+</html>

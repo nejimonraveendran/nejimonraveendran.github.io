@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nejimon Raveendran</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <style>
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Poppins", sans-serif}
+
+      .header
+      {
+        position: relative;
+        background: rgb(36, 40, 42);
+        height: 80px;
+        padding: 20px;
+        box-shadow: 0px 1px 5px black 
+      }
+
+      .contents
+      {
+        display:grid;
+        position: relative;
+        background-color: rgb(176, 181, 186);
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 10px;
+      }
+      
+      .card 
+      {
+        padding: 10px;
+        width: fit-content;
+        height:fit-content;
+        background-color: white;
+        box-shadow: 1px 1px 5px gray 
+      }
+
+      .thumb_frame
+      {
+        background: black;
+        max-height: 200px;
+        max-width: 200px;
+        align-items: center;
+        text-align: center;
+        vertical-align:middle;
+      }
+
+      .title
+      {
+        color: white;
+        text-transform: uppercase;
+        font-size: x-large;
+        font-weight: 600;
+
+      }
+
+      .subtitle
+      {
+        color: cornflowerblue;
+        text-transform: uppercase;
+
+      }
+
+      .thumb
+      {
+        cursor: pointer;
+      }
+
+      #canvas
+      {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 20px;
+      }
+
+      #photo
+      {
+        position:relative; 
+        max-width: 100%; 
+        max-height: 100%;
+        display: grid;
+        margin: auto;
+        box-shadow: 0px 0px 100px black; 
+      }
+
+      .back{
+        margin-right: 20px;
+        color: rgb(216, 202, 202);
+        cursor: pointer;
+      }
+
+      .footer{
+        position:fixed; 
+        bottom:0; 
+        left:0; 
+        width:100%;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body class="w3-grey">
+    <div class="header">
+      <a href="/"><i class="fas fa-home back w3-hover-opacity"></i></a>
+      <!-- <span><i class="fa fa-arrow-left back w3-hover-opacity" onclick="window.history.go(-1);"></i></span> -->
+      <span class="title">Nejimon </span>
+      <span class="subtitle">| PROJECTS AND ARTICLES </span>
+      <span>
+        <img src="https://api.visitorbadge.io/api/visitors?path=nejimon.raveendran.genart&countColor=%234a748a&style=flat"></img>
+      </span>
+    </div>
+
+
+
+    <div class="w3-container w3-card w3-white w3-margin-bottom">
+      <div class="w3-container" style="padding-bottom: 50px;">
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Build A Smart Switch Using Azure IoT Hub, Espressif ESP32, and ASP.NET Core</span>
+          </b>
+          <br>
+          A project demonstrating practical example of building a smart switch using technologies such as Azure IoT Hub, ASP.NET Core, Azure App Service, and ESP32 microcontroller.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/AzureIoT">Project Link</a>
+          <hr>
+        </p> 
+
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">ChocoBar - A Windows Desktop Toolbar</span>
+          </b>
+          <br>
+          ChocoBar is a project I built for my own use and now have open sourced it. It is a Windows desktop toolbar with capabilities to add hot keys and screen recording. People like digital artists can add to the tool the frequently used hot keys in their favorite applications for quick access to those functionalities.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/ChocoBar">Project Link</a>
+          <hr>
+        </p> 
+        
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Docker .NET Samples</span>
+          </b>
+          <br>
+          A collection of artifacts (guides, Dockerfile boilerplate templates, demo code, etc) that can be readily used when containerizing .NET applications using Docker.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/DockerDotNet">Repo Link</a>
+          <hr>
+        </p> 
+
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Embedded Programs Collection</span>
+          </b>
+          <br>
+          A collection of C++ sketches demonstrating projects using various microcontrollers, i.e., ESP8266, ESP32, Arduino, etc.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/EmbeddedSystems">Repo Link</a>
+          <hr>
+        </p> 
+
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Automate Deployment of Azure Web Apps using Azure CLI and PowerShell</span>
+          </b>
+          <br>
+          An article showing how to use Azure CLI to do application deployments to Azure App Service Web App.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://medium.com/@nejimon.raveendran/automate-deployment-of-azure-web-apps-using-azure-cli-and-powershell-adbcaa06e236">Article Link</a>
+          <hr>
+        </p>         
+        
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Automate Deployment of Azure Web App Using Bicep Template</span>
+          </b>
+          <br>
+          An practical example showing how to use Bicep template, an alternative to Azure ARM templates, to do application deployments to Azure App Service Web App.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/AzureWebAppBicep">Repo Link</a>
+          <hr>
+        </p>         
+    
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">WindowShot</span>
+          </b>
+          <br>
+          A .NET Winforms Desktop application project to do timelapse-recording of Windows Desktop screen.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/WindowShot">Repo Link</a>
+          <hr>
+        </p>         
+
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Entity Framework Core Migration Demo</span>
+          </b>
+          <br>
+          This repository demonstrates how DB schema migrations can be done in Entity Framework Core Migrations.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/EntityFrameworkCoreMigrationDemo">Repo Link</a>
+          <hr>
+        </p>                 
+
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Nuances of .NET Core Dependency Injection</span>
+          </b>
+          <br>
+          This repo demonstrates different behaviors when using different lifetime scopes, i.e., AddScoped versus AddTransient versus AddSingleton.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://github.com/nejimonraveendran/DotNetCoreDiDemo">Repo Link</a>
+          <hr>
+        </p>                 
+
+        <!-- new project -->
+        <p>        
+          <i class="fas fa-image w3-text-blue" ></i>
+          <b>
+            <span class="social_media w3-text-grey w3-large">Self-Hosted AI/ML Server with CodeProject.AI</span>
+          </b>
+          <br>
+          AI and ML are fast becoming the essential tools in every developer's arsenal.  This is an article about CodeProject.AI, a self-hosted AI server.          
+          <br>
+          <i class="fab fa-github w3-text-blue"></i>
+          <a class="social_media w3-text-grey w3-hover-opacity w3-small" href="https://www.linkedin.com/pulse/self-hosted-aiml-server-codeprojectai-nejimon-raveendran-togaf-/">Article Link</a>
+          <hr>
+        </p>                 
+
+      </div>
+    </div>    
+
+    <footer class="w3-container w3-dark-grey w3-center footer">
+      <p>&copy Nejimon Raveendran | <a href="/privacy.html">Privacy Policy</a></p>
+    </footer>
+  </body>
+
+
+  <script>
+    $(function(){
+      $('.thumb').click(function (){
+          var url = this.src.replace('thumbnails', 'sketches').replace('.gif', '') + '/index.html';
+          location.href = url;          
+
+      });      
+
+      $('#canvas').click(function (){
+        var canvas = $('#canvas');
+          $(canvas).css('display', 'none');
+      });
+    });
+  </script>
+</html>
